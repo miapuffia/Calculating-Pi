@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>3 Points and a Circle</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://miapuffia.com/scripts/prefix.min.js"></script>
+		<script src="canvasDrawMultilineTextv0.3.js"></script>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+		
+		<div id="controlPanel">
+			<button id="startButton">Start</button>
+			<button id="resetButton">Reset</button>
+			<button id="whatButton">What is this?</button>
+			
+			<div id="sliderDiv" class="spanAllColumns">
+				<label for="slider">
+					# of digits of Pi to look for:
+					<br>
+					(this changes the mass of the big square below)
+				</label>
+				
+				<input type="range" id="slider" name="slider" min="1" max="5" value="1">
+				
+				<div class="sliderticks">
+					<p>1</p>
+					<p>2</p>
+					<p>3</p>
+					<p>4</p>
+					<p>5</p>
+				</div>
+			</div>
+			
+			<div id="note" class="spanAllColumns">
+				Note: Starting at this setting,
+				<br>
+				visual glitches are apparent.
+				<br>
+				This happens because there are many
+				<br>
+				collisions in a small fraction of a second.
+			</div>
+			
+			<div id="warning" class="spanAllColumns">
+				Warning! The maximum number of collisions
+				<br>
+				that can be calculated is &#x2248;100 per second!
+				<br>
+				At that setting, it will take >&nbsp;<span id="time"></span>!
+			</div>
+			
+			<div class="spanAllColumns">
+				<label for="speed">Animation speed:&nbsp;</label>
+				<input type="number" id="speed" name="speed" value="50" min="9" max="99">
+			</div>
+			
+			<div class="spanAllColumns">
+				<label for="antiAliasing">Use anti-aliasing (smooths animation):&nbsp;</label>
+				<input type="checkbox" id="antiAliasing" name="antiAliasing" checked>
+			</div>
+		</div>
+	</body>
+	<script src="script.js"></script>
+</html>
